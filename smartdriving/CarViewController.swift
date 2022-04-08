@@ -1,32 +1,29 @@
 //
-//  IntroViewController.swift
+//  CarViewController.swift
 //  smartdriving
 //
-//  Created by Maximilian Hagn on 04.09.18.
+//  Created by Maximilian Hagn on 07.09.18.
 //  Copyright © 2018 Maximilian Hagn. All rights reserved.
 //
 
 import UIKit
-import FirebaseDatabase
 import FirebaseAuth
+import FirebaseDatabase
 
-class IntroViewController: UIViewController, UITextFieldDelegate {
-
+class CarViewController: UIViewController, UITextFieldDelegate {
+    
     //declaring vars
     var ref: DatabaseReference!
-    @IBOutlet weak var name: UITextField!
-    @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var carId: UITextField!
     @IBOutlet weak var startDistance: UITextField!
     @IBOutlet weak var maxPrivat: UITextField!
     @IBOutlet weak var maxBusiness: UITextField!
     
+    
     // Do any additional setup after loading the view.
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
-        self.name.delegate = self
-        self.lastName.delegate = self
         self.carId.delegate = self
         self.startDistance.delegate = self
         self.maxPrivat.delegate = self
@@ -37,33 +34,30 @@ class IntroViewController: UIViewController, UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    
+
     //Actions executed by memory warning
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    //Upload the Intro Data
-    @IBAction func uploadData(_ sender: Any) {
+
+    //Cancel add new car
+    @IBAction func dismiss(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    //Add a new car to database
+    @IBAction func addCar(_ sender: Any) {
         let user = Auth.auth().currentUser
         if let user = user {
             let uid = user.uid
-            let data = [
-                "name":  name.text,
-                "lastName": lastName.text,
-            ]
-            let firstCar = [
+            let newCar = [
                 "carId":   carId.text,
                 "startDistance": startDistance.text,
                 "maxPrivat": maxPrivat.text,
                 "maxBusiness": maxBusiness.text
             ]
-            ref.child("Users").child(uid).child("UserData").setValue(data)
-            ref.child("Users").child(uid).child("Cars").childByAutoId().setValue(firstCar)
-            let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let uITabBarController:UITabBarController = storyboard.instantiateViewController(withIdentifier: "UITabBarController") as! UITabBarController
-            self.present(uITabBarController, animated: true, completion: nil)
+            ref.child("Users").child(uid).child("Cars").childByAutoId().setValue(newCar)
+            dismiss(animated: true, completion: nil)
         }
     }
 }

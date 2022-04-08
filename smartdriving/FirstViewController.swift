@@ -7,20 +7,31 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
+import Firebase
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var startDistance: UITextField!
+    //declaring vars
+    @IBOutlet weak var distance: UILabel!
+    var dataFin: [Int : [String : String]]!
+    var ref: DatabaseReference!
     
+    // Do any additional setup after loading the view.
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = Database.database().reference()
+       // self.loadData()
     }
     
+    //Actions executed by memory warning
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    //Load the Data from current User
 
 }
 

@@ -33,13 +33,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    
     //Actions executed by memory warning
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
+    //Keyboard should return to next Textfield
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
          textField.resignFirstResponder()
          self.login()
@@ -57,9 +56,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let user = Auth.auth().currentUser
         if let user = user {
             let uid = user.uid
-            print(uid)
         ref.child("Users").observeSingleEvent(of: .value, with: { (snapshot) in
-            print(snapshot)
                 if snapshot.hasChild(uid){
                     self.presentLoggedInPage()
                 }else{
@@ -83,11 +80,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.present(viewController, animated: true, completion: nil)
     }
     
-    //Log In with Firebase Func
+    //Action when login tabbed
     @IBAction func loginTabbed(_ sender: Any) {
         self.login()
     }
     
+    //Login Function
     func login(){
         if let email = email.text, let password = passwd.text {
             Auth.auth().signIn(withEmail: email, password: password, completion: { user, error in

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A7230F0C213E8F1900BC2104 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7230F0B213E8F1900BC2104 /* ThirdViewController.swift */; };
 		A7230F0E213EA8CA00BC2104 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7230F0D213EA8CA00BC2104 /* IntroViewController.swift */; };
+		A7230F102142D69D00BC2104 /* CarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7230F0F2142D69C00BC2104 /* CarViewController.swift */; };
 		A790AA68213C8667006B46B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A790AA67213C8667006B46B3 /* ViewController.swift */; };
 		A7FE0FE8213C722D0002FDC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FE0FE7213C722D0002FDC8 /* AppDelegate.swift */; };
 		A7FE0FEA213C722D0002FDC8 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FE0FE9213C722D0002FDC8 /* FirstViewController.swift */; };
@@ -50,6 +51,7 @@
 		9F2229B92666C32BAC46E53C /* Pods-smartdrivingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smartdrivingUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-smartdrivingUITests/Pods-smartdrivingUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A7230F0B213E8F1900BC2104 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		A7230F0D213EA8CA00BC2104 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		A7230F0F2142D69C00BC2104 /* CarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewController.swift; sourceTree = "<group>"; };
 		A790AA67213C8667006B46B3 /* ViewController.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; path = ViewController.swift; sourceTree = "<group>"; usesTabs = 0; };
 		A7FE0FE4213C722D0002FDC8 /* smartdriving.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smartdriving.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7FE0FE7213C722D0002FDC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				A7FE1017213C72930002FDC8 /* GoogleService-Info.plist */,
 				A7FE0FF5213C722E0002FDC8 /* Info.plist */,
 				A7230F0D213EA8CA00BC2104 /* IntroViewController.swift */,
+				A7230F0F2142D69C00BC2104 /* CarViewController.swift */,
 			);
 			path = smartdriving;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				A7FE0FEC213C722D0002FDC8 /* SecondViewController.swift in Sources */,
 				A7FE0FE8213C722D0002FDC8 /* AppDelegate.swift in Sources */,
 				A7230F0C213E8F1900BC2104 /* ThirdViewController.swift in Sources */,
+				A7230F102142D69D00BC2104 /* CarViewController.swift in Sources */,
 				A7230F0E213EA8CA00BC2104 /* IntroViewController.swift in Sources */,
 				A790AA68213C8667006B46B3 /* ViewController.swift in Sources */,
 				A7FE0FEA213C722D0002FDC8 /* FirstViewController.swift in Sources */,

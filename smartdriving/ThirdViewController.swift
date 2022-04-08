@@ -8,21 +8,38 @@
 import UIKit
 import FirebaseAuth
 
-class ThirdViewController: UIViewController {
-
+class ThirdViewController: UIViewController, UITextFieldDelegate {
+    
+    //declaring vars
+    
+    // Do any additional setup after loading the view.
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
+    //Close Keyboard by clicking out of Textbox
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
+    //Actions executed by memory warning
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
+    //Action when new Car Button is tabbed
+    @IBAction func addCar(_ sender: Any) {
+       self.presentAddCar()
+    }
     
+    //Add Car Window appears function
+    func presentAddCar(){
+        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController:CarViewController = storyboard.instantiateViewController(withIdentifier: "CarViewController") as! CarViewController
+        self.present(viewController, animated: true, completion: nil)
+    }
+    
+    //Logout Function
     @IBAction func logOut(_ sender: Any) {
         do {
          try Auth.auth().signOut()
@@ -30,16 +47,4 @@ class ThirdViewController: UIViewController {
             
         } catch {print("Problem logging you out!")}
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
